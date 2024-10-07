@@ -117,17 +117,40 @@ $conn->close();
     </style>
 </head>
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <div class="container">
     <h2>Log In</h2>
     <form method="post" action="">
         <label for="username">Username:</label>
         <input type="text" name="username" placeholder="Enter UserName" required><br>
+        
         <label for="password">Password:</label>
-        <input type="password" name="password" placeholder="Enter Password" required><br>
+        <div style="position: relative; width: 100%;">
+            <input type="password" id="password" name="password" placeholder="Enter Password" required style="width: 85%; padding-right: 40px;">
+            
+            <i class="fas fa-eye" id="togglePassword" style="position: absolute; right: 10px; top: 40%; transform: translateY(-50%); cursor: pointer; font-size: 18px; color: #666;"></i>
+        </div><br>
+        
         <input type="submit" value="Login">
         <p>Don't have an account? <a href="create_account.php">Create one here</a>.</p>
     </form>
 </div>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function () {
+        
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        
+        
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
 </body>
 
 </html>
