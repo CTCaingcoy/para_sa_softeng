@@ -98,7 +98,7 @@ nav ul li a.active {
     color: #FFFFFF;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 .browse-btn:hover {
@@ -109,14 +109,15 @@ nav ul li a.active {
     display: none;
     opacity: 0.7;
     background-color: #B98F66;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 30px;
     align-items: center;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-top: 300px;
+    margin: 60px 60px;
     padding-left: 60px;
     padding-right: 60px;
+    text-align: center;
+    font-size: 26px;
 }
 
 .about-section.active {
@@ -145,11 +146,3 @@ nav ul li a.active {
     vertical-align: middle;
     margin-bottom: 5px;
 }
-
-/* .about-section {
-    margin: 10px 0; 
-    text-align: center; 
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-} */
