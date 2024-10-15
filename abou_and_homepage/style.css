@@ -7,12 +7,11 @@
 body {
     min-width: 100vh;
     font-family: 'Arial', sans-serif;
-    background-image: url('C:/Users/Admin/Downloads/photo-1604147495798-57beb5d6af73.avif');
+    background-image: url(bg.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover; 
     background-attachment: fixed;
-    background-size: 100%;
     color: #fff;
 }
 
@@ -49,7 +48,12 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 'Arial';
-    font-size: 25px; 
+    font-size: 25px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #B98F66;
 }
 
 nav ul li a.active {
@@ -91,18 +95,44 @@ nav ul li a.active {
 }
 
 .browse-btn {
-    padding: 10px 20px;
-    opacity: 0.6;
+    padding: 20px 40px; 
+    opacity: 0.8; 
     background-color: #2B1C04;
     border: none;
     color: #FFFFFF;
     cursor: pointer;
     text-align: center;
     transition: 0.3s;
+    font-size: 18px;
+    width: 200px; 
+    border-radius: 20px;
 }
 
 .browse-btn:hover {
     background-color: rgba(62, 50, 37, 0.8);
+}
+
+.slideshow {
+    position: relative;
+    max-width: 100%; 
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.slideInRight {
+    animation-name: slideInRight;
+    animation-duration: 1.5s;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0.4 } 
+    to { opacity: 1 }
 }
 
 .about-section {
@@ -132,16 +162,16 @@ nav ul li a.active {
 
 .footer-items div {
     margin: 20px;
-    padding: 50px;
+    padding: 30px;
     font-weight: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 .footer-items img {
-    width: 60px; 
+    width: 70px; 
     height: auto; 
     vertical-align: middle;
     margin-bottom: 5px;
