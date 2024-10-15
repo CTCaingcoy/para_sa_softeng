@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO users (username, email, phone_number, address, password) VALUES ('$username', '$email', '$phone_number', '$address', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        header(header: "Location: index.php");
+        header(header: "Location: login.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -40,14 +40,17 @@ $conn->close();
     <title>Create Account</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg_login.png'); /* Add your image path here */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
             margin: 0;
             padding: 20px;
-            background: url('bga.jpg') no-repeat center center fixed;
-            font-family: 'Arial', sans-serif;
         }
         .container {
             max-width: 350px;
-            margin: 100px auto;
+            margin: 0px auto;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 20px;
@@ -143,7 +146,7 @@ $conn->close();
         </div>
         <input type="submit" class="btn-submit" value="CREATE ACCOUNT">
     </form>
-    <p>Already have an account? <a href="index.php">Login</a>.</p>
+    <p>Already have an account? <a href="login.php">Login</a>.</p>
 </div>
 
 <script>
