@@ -1,14 +1,152 @@
-.header {
-    background-color: #2B1C04;
-    padding: 20px;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.header a {
-    margin: 0 15px;
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('bg.png'); /* Replace 'bg.png' with your actual background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Makes sure background image stays fixed */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2b1c04; /* Dark header background */
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
     text-decoration: none;
     color: #ffffff;
-    font-size: x-large;
+    font-size: 18px;
 }
-.header a:hover {
-    color: #87c1ff;
+
+.search-cart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: none;
+    border-radius: 25px;
+}
+
+.search-cart input {
+    padding: 5px;
+    font-size: 16px;
+    width: 200px;
+    border: none;
+    border-radius: 25px;
+}
+
+.cart-icon {
+    height: 30px;
+}
+
+.main-body {
+    display: flex;
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.buttons button {
+    font-weight: bold;
+    padding: 15px;
+    font-size: 23px;
+    background-color: #dcc29c; /* Button color */
+    width: 250px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #c8a877; /* Change button color on hover */
+}
+
+.content-container {
+    flex-grow: 1;
+    padding-left: 40px;
+    background-color: #b98f6685;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow to content container */
+}
+
+.user-info {
+    padding: auto; /* Padding for spacing */
+    max-width: 2000; /* Maximum width for the user info box */
+    margin: 0 auto;
+    
+}
+
+.profile-container {
+    display: flex;
+    padding: auto; /* Use flexbox for layout */
+    align-items: center; 
+    margin-top: 100px;/* Center items vertically */
+    margin-bottom: 100px; /* Space below profile container */
+    margin: 0 auto;
+}
+
+.profile-pic {
+    margin-right: 20px; /* Space between profile picture and name */
+}
+
+.profile-pic img {
+    border-radius: 90%; /* Circular profile picture */
+    width: 250px; /* Width of the profile picture */
+    height: 250px; /* Height of the profile picture */
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column; /* Stack details vertically */
+}
+
+.user-details label {
+    margin-top: 10px; /* Space above labels */
+}
+
+.user-details input {
+    padding: 10px; /* Padding for input fields */
+    margin-top: 5px; /* Space above input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 5px; /* Rounded corners for input fields */
+}
+.user-details button{
+    font-weight: bold;
+    padding: 15px;
+    font-size: 23px;
+    background-color: #dcc29c; /* Button color */
+    width: 150px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+
 }

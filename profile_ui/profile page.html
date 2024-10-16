@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Template</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+        <div class="search-cart">
+            <input type="text" placeholder="Search...">
+            <img src="cart-icon.png" alt="Cart" class="cart-icon">
+        </div>
+    </header>
+
+    <!-- Main Body -->
+    <div class="main-body">
+        <div class="buttons">
+            <button onclick="showUserInfo()">USER</button>
+            <button onclick="showOrders()">ORDER</button>
+            <button onclick="showWishlist()">WHISTLIST</button>
+            <button onclick="showContact()">CONTACT</button>
+            <button onclick="showSecurity()">SECURITY</button>
+            <button onclick="logOut()">LOG OUT</button>
+        </div>
+        <div class="content-container" id="content-container">
+            <div class="user-info">
+                <div class="profile-container">
+                    <div class="profile-pic">
+                        <img src="bg.png" alt="Profile Picture">
+                    </div>
+                    <h2>NAME, SURNAME</h2>
+                </div>
+                <div class="user-details">
+                    <label for="email">EMAIL</label>
+                    <input type="text" id="email" placeholder="Enter your email">
+                    
+                    <label for="address">SHIPPING ADDRESS</label>
+                    <input type="text" id="address" placeholder="Enter your shipping address">
+                    
+                    <label for="contact">CONTACT NUMBER</label>
+                    <input type="text" id="contact" placeholder="Enter your contact number">
+                    <button>save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
