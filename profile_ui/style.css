@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('bg.png'); /* Replace 'bg.png' with your actual background image */
+    background-image: url('https://res.cloudinary.com/dgzrvamaz/image/upload/v1729148255/bg_tvqdfv.png'); /* Replace 'bg.png' with your actual background image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Makes sure background image stays fixed */
