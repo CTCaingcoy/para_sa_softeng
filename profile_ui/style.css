@@ -89,7 +89,7 @@ nav ul li a {
 .content-container {
     flex-grow: 1;
     padding-left: 40px;
-    background-color: #b98f6685;
+    background-color: #b98f667e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow to content container */
@@ -119,6 +119,7 @@ nav ul li a {
     border-radius: 90%; /* Circular profile picture */
     width: 250px; /* Width of the profile picture */
     height: 250px; /* Height of the profile picture */
+    margin-left: 300px;
 }
 
 .user-details {
@@ -128,14 +129,20 @@ nav ul li a {
 
 .user-details label {
     margin-top: 10px; /* Space above labels */
+    width: 200px;
+    margin-left: 250px;
+    font-weight: bold;
 }
 
 .user-details input {
     padding: 10px; /* Padding for input fields */
     margin-top: 5px; /* Space above input fields */
-    border: 1px solid #ccc; /* Border for input fields */
-    border-radius: 5px; /* Rounded corners for input fields */
+    border: none; /* Border for input fields */
+    border-radius: 20px; /* Rounded corners for input fields */
+    width: 1000px;
+    margin-left: 240px;
 }
+
 .user-details button{
     font-weight: bold;
     padding: 15px;
