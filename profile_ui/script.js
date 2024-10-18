@@ -23,26 +23,79 @@ function showUserInfo() {
 
 // Function to show Orders
 function showOrders() {
-    document.getElementById("content-container").innerHTML = `
-        <h2>Order History</h2>
-        <p>Check your past orders and track current ones. View details such as order status, items purchased, and delivery dates.</p>
-    `;
+    document.getElementById("content-container").innerHTML = ` 
+    <div id="order-content" class="order-info">
+        <div class="order-track">
+            <label>TRACK YOUR ORDER</label>
+                <div class="progress-track">
+                    <span class="progress-step done"></span>
+                    <span class="progress-step done"></span>
+                    <span class="progress-step done"></span>
+                    <span class="progress-step done"></span>
+                </div>
+            </div>
+                <div class="order-history">
+                    <label>ORDER HISTORY</label>
+                <div class="order-history-box">
+                <!-- This is where order history data will be displayed -->
+            </div>
+        </div>
+    </div>
+
+        `;
 }
 
 // Function to show Wishlist
 function showWishlist() {
-    document.getElementById("content-container").innerHTML = `
-        <h2>Wishlist</h2>
-        <p>Here you can view your saved items for future purchases. Add and remove items from your wishlist.</p>
-    `;
+    document.getElementById("content-container").innerHTML = `<div id="wishlist-content" class="wishlist-info">
+    <div class="wishlist-header">
+        <label>WISHLIST</label>
+    </div>
+    <div class="wishlist-box">
+        <!-- Wishlist items will go here -->
+    </div>
+</div>
+
+        
+        `;
 }
 
 // Function to show Contact Info
 function showContact() {
-    document.getElementById("content-container").innerHTML = `
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need help, feel free to contact us via email or phone. We're here to assist you!</p>
-    `;
+    document.getElementById("content-container").innerHTML = `<div id="contact-content" class="contact-info">
+    <div class="contact-header">
+        <label>GET IN TOUCH</label>
+    </div>
+    <div class="contact-body">
+        <div class="contact-left">
+            <p>Whether you've got a question, need advice, or want to discuss a project or collaboration, I'm always open to new connections. Use the form below to reach me, and I'll make sure to respond as soon as I can.</p>
+            <div class="contact-icons">
+                <img src="phone-icon.png" alt="Phone Icon">
+                <img src="facebook-icon.png" alt="Facebook Icon">
+            </div>
+        </div>
+        <div class="contact-form">
+            <form>
+                <label for="name">NAME *</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                
+                <label for="email">EMAIL *</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                
+                <label for="reason">REASON *</label>
+                <input type="text" id="reason" placeholder="Enter the reason">
+                
+                <label for="message">MESSAGE *</label>
+                <textarea id="message" placeholder="Enter your message"></textarea>
+                
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+        
+        `;
 }
 
 // Function to show Security Info

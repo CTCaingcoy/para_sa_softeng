@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://res.cloudinary.com/dw44z8kbk/image/upload/v1729150857/egkqohh6cxzwf91outtl.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 350px;
+    margin: 0px auto;
+    padding: 20px;
+    background:#2b1c0480;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+.container h2 {
+    margin-bottom: 10px;
+    font-family: 'trajan Pro';
+    color: rgb(0, 0, 0);
+    font-size: 60px;
+}
+.input-group {
+    margin-bottom: 12px;
+    text-align: left;
+}
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: rgb(255, 251, 251);
+    font-weight: auto;
+}
+.input-field {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.btn-submit:hover {
+    background-color: #5cb85c;
+}
+p {
+    margin-top: 12px;
+    color: white;
+}
+p a {
+    color: #7F00FF;
+    text-decoration: underline;
+}

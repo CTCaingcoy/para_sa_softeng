@@ -6,10 +6,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://res.cloudinary.com/dgzrvamaz/image/upload/v1729148255/bg_tvqdfv.png'); /* Replace 'bg.png' with your actual background image */
+    background-image: url('https://res.cloudinary.com/dgzrvamaz/image/upload/v1729148255/bg_tvqdfv.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Makes sure background image stays fixed */
+    background-attachment: fixed; /* Background stays fixed */
 }
 
 header {
@@ -17,7 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #2b1c04; /* Dark header background */
+    background-color: #2b1c04;
 }
 
 .logo img {
@@ -59,6 +59,7 @@ nav ul li a {
 .main-body {
     display: flex;
     padding: 20px;
+    flex-direction: row;
 }
 
 .buttons {
@@ -73,17 +74,17 @@ nav ul li a {
     font-weight: bold;
     padding: 15px;
     font-size: 23px;
-    background-color: #dcc29c; /* Button color */
+    background-color: #dcc29c;
     width: 250px;
     cursor: pointer;
     border: none;
     border-radius: 25px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
 .buttons button:hover {
-    background-color: #c8a877; /* Change button color on hover */
+    background-color: #c8a877;
 }
 
 .content-container {
@@ -92,68 +93,276 @@ nav ul li a {
     background-color: #b98f667e;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow to content container */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 .user-info {
-    padding: auto; /* Padding for spacing */
-    max-width: 2000; /* Maximum width for the user info box */
+    padding: 20px;
+    max-width: 100%;
     margin: 0 auto;
-    
 }
 
 .profile-container {
     display: flex;
-    padding: auto; /* Use flexbox for layout */
-    align-items: center; 
-    margin-top: 100px;/* Center items vertically */
-    margin-bottom: 100px; /* Space below profile container */
-    margin: 0 auto;
-}
-
-.profile-pic {
-    margin-right: 20px; /* Space between profile picture and name */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .profile-pic img {
-    border-radius: 90%; /* Circular profile picture */
-    width: 250px; /* Width of the profile picture */
-    height: 250px; /* Height of the profile picture */
-    margin-left: 300px;
+    border-radius: 50%;
+    width: 150px; /* Smaller width on smaller screens */
+    height: 150px;
+    margin-right: 20px;
 }
 
 .user-details {
     display: flex;
-    flex-direction: column; /* Stack details vertically */
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .user-details label {
-    margin-top: 10px; /* Space above labels */
-    width: 200px;
-    margin-left: 250px;
+    margin-top: 10px;
     font-weight: bold;
+    text-align: left;
+    width: 90%;
 }
 
 .user-details input {
-    padding: 10px; /* Padding for input fields */
-    margin-top: 5px; /* Space above input fields */
-    border: none; /* Border for input fields */
-    border-radius: 20px; /* Rounded corners for input fields */
-    width: 1000px;
-    margin-left: 240px;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px; /* Set a max-width for larger screens */
 }
 
-.user-details button{
+.user-details button {
     font-weight: bold;
     padding: 15px;
     font-size: 23px;
-    background-color: #dcc29c; /* Button color */
+    background-color: #dcc29c;
     width: 150px;
     cursor: pointer;
     border: none;
     border-radius: 25px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
-    margin: 0 auto;
-
+    margin-top: 20px;
+    text-align: center;
 }
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+    .main-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .buttons button {
+        width: 180px; /* Smaller button width on tablets */
+        margin-bottom: 10px;
+    }
+
+    .profile-pic img {
+        width: 100px; /* Smaller profile picture */
+        height: 100px;
+    }
+
+    .user-details input {
+        width: 100%; /* Full width input on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    .profile-pic img {
+        width: 80px; /* Smaller profile picture */
+        height: 80px;
+    }
+
+    .user-details input {
+        width: 100%; /* Full width for small screens */
+    }
+}
+/*order*/
+.order-info {
+    padding: 20px;
+}
+
+.order-track {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.order-track label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.progress-track {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.progress-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #dcc29c; /* Default step color */
+    display: inline-block;
+}
+
+.progress-step.done {
+    background-color: #4caf50; /* Green step for completed status */
+}
+
+.order-history {
+    margin-top: 20px;
+}
+
+.order-history label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.order-history-box {
+    width: 100%;
+    height: 150px;
+    background-color: #dcc29c;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto; /* Scroll if content is too long */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Wishlist content styling */
+.wishlist-info {
+    padding: 20px;
+}
+
+.wishlist-header label {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #dcc29c;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.wishlist-box {
+    width: 100%;
+    height: 200px;
+    background-color: #dcc29c;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for the wishlist box */
+    margin-top: 10px;
+    overflow-y: auto; /* Allows scrolling if there are many items */
+}
+/* Contact content styling */
+.contact-info {
+    padding: 20px;
+}
+
+.contact-header label {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #dcc29c;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contact-body {
+    display: flex;
+    margin-top: 20px;
+}
+
+.contact-left {
+    width: 35%;
+    background-color: #dcc29c;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.contact-left p {
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-icons img {
+    width: 30px;
+    margin-top: 20px;
+}
+
+.contact-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #dcc29c;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
