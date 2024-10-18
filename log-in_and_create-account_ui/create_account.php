@@ -38,76 +38,12 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('bg_login.png'); /* Add your image path here */
-            background-size: cover; /* Ensures the image covers the entire background */
-            background-position: center; /* Centers the background image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 350px;
-            margin: 0px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-        }
-        .container h2 {
-            margin-bottom: 10px;
-            font-family: 'trajan Pro';
-            color: white;
-            font-size: 60px;
-        }
-        .input-group {
-            margin-bottom: 12px;
-            text-align: left;
-        }
-        label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: white;
-        }
-        .input-field {
-            width: 95%;
-            padding: 10px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 30px;
-        }
-        
-        .btn-submit {
-            width: 100%;
-            padding: 10px;
-            background-color: #000;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        .btn-submit:hover {
-            background-color: #333;
-        }
-        p {
-            margin-top: 12px;
-            color: white;
-        }
-        p a {
-            color: #7F00FF;
-            text-decoration: underline;
-        }
-    </style>
+    
 </head>
 <body>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="create_account.css">
 
 <div class="container">
     <h2>KOTSI</h2>
