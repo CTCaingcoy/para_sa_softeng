@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($submitted_password, $hashed_password)) {
             $_SESSION['username'] = $user['username'];
-            header("Location: product_page.php");
+            header("Location: home_about.html");
             exit();
         } else {
             $error_message = "Invalid password. Please try again."; 
