@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2024 at 04:31 AM
+-- Generation Time: Oct 20, 2024 at 04:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,21 +71,22 @@ CREATE TABLE `productsss` (
 --
 
 INSERT INTO `productsss` (`id`, `name`, `price`, `image_url`, `category`, `availability`, `color`, `year`) VALUES
-(1, 'Bone Shaker', 150000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/zfz3ergorsnct8kyywsd.webp', 'Race Cars', 10, NULL, NULL),
-(2, 'Twin Mill', 120000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573784/wvgp8imqtj9krs5mz0dv.png', 'Race Cars', 15, NULL, NULL),
-(3, '24 Ours', 130000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/wqx3vokvrligc4hhnv22.png', 'Race Cars', 8, NULL, NULL),
-(4, 'Roger dogger', 140000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/gojnjfnogb0drzmynccz.png', 'Muscle Cars', 5, NULL, NULL),
-(5, 'Street Creeper', 100000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/zfz3ergorsnct8kyywsd.webp', 'Trucks', 20, NULL, NULL),
-(6, 'Shark Kruiser', 120000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/i4fxc7s0gi8jancd8zn6.png', 'race car', 7, NULL, NULL),
-(7, 'Turbo Charged', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/rze1xmjar6ijgzriz3as.png', 'Race Car', 10, NULL, NULL),
-(8, 'Deora II', 12000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573782/wmmuhm8514dnsygm233c.png', 'Race Car', 8, NULL, NULL),
-(9, 'Skull Crasher', 14000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/ie2bvnvrghln2ipajnzn.png', 'Race Car', 15, NULL, NULL),
-(10, 'Rd-02', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/plu3hlrkdtyx0fv0iqd8.png', 'Race Car', 10, NULL, NULL),
-(11, 'Power Rocket', 11000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573782/bk7033qlocvizob85pfj.webp', 'Race Car', 16, NULL, NULL),
-(12, 'Sand Blaster', 10000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/dyky0huqwojt0vv4tbs9.png', 'Race Car', 14, NULL, NULL),
-(13, 'Fast Fish', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573782/ig4eaewxmcum9ljc3ukv.png', 'Race Car', 20, NULL, NULL),
-(14, 'Cloak & Dagger', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/yfpamgz0x2uoq8yy5ery.webp', 'Race Car', 13, NULL, NULL),
-(15, 'Hollowback', 13000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728578376/Hollowback_haofsq.png', 'Race Car', 12, NULL, NULL);
+(1, 'Bone Shaker', 150000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1729420768/Bone-Shaker_jvodeu.jpg', 'Truck', 10, 'white', 2012),
+(2, 'Twin Mill', 120000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573784/wvgp8imqtj9krs5mz0dv.png', 'Race Car', 15, 'Blue', 2011),
+(3, '24 Ours', 130000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/wqx3vokvrligc4hhnv22.png', 'Race Car', 8, 'Blue', 2010),
+(4, 'Roger dogger', 140000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/gojnjfnogb0drzmynccz.png', 'Muscle Car', 5, 'red', 2015),
+(5, 'Street Creeper', 100000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/zfz3ergorsnct8kyywsd.webp', 'Truck', 20, 'blue', 2010),
+(6, 'Shark Kruiser', 120000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/i4fxc7s0gi8jancd8zn6.png', 'Race car', 7, 'green', 2018),
+(7, 'Turbo Charged', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/rze1xmjar6ijgzriz3as.png', 'Race Car', 10, 'Blue', 2017),
+(8, 'Deora II', 12000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573782/wmmuhm8514dnsygm233c.png', 'Race Car', 8, 'Blue', 2011),
+(9, 'Skull Crasher', 14000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/ie2bvnvrghln2ipajnzn.png', 'Truck', 15, 'orange', 2007),
+(10, 'Rd-02', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573783/plu3hlrkdtyx0fv0iqd8.png', 'Race Car', 10, 'green', 2013),
+(11, 'Power Rocket', 11000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573782/bk7033qlocvizob85pfj.webp', 'Race Car', 16, 'Orange', 2018),
+(12, 'Sand Blaster', 10000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/dyky0huqwojt0vv4tbs9.png', 'Race Car', 14, 'Blue', 2020),
+(13, 'Fast Fish', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573782/ig4eaewxmcum9ljc3ukv.png', 'Race Car', 20, 'Blue', 2021),
+(14, 'Cloak & Dagger', 15000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728573781/yfpamgz0x2uoq8yy5ery.webp', 'Race Car', 13, '2018', 2011),
+(15, 'Hollowback', 13000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1728578376/Hollowback_haofsq.png', 'Race Car', 12, 'red', 2010),
+(17, 'F1 Racer', 150000.00, 'https://res.cloudinary.com/dw44z8kbk/image/upload/v1729413828/F1_Racer_q3knds.png', 'Race Car', 10, 'red', 2022);
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,9 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `phone_number`, `address`, 
 (6, 'johnd', 'alvarezjohndexter05@gmail.com', '09876543213', 'dsahdu12dsadaasd', '$2y$10$LuImPoar2ljMh3F0KOkhs.Nc.jkQ4KWmE1Y6gKoPgmJACUEGlyEYa'),
 (7, 'sadqwe', 'alvarezdexterjohn06@gmail.com', '09876543213', 'dsahdu12dsadaasd', '$2y$10$vjQY5SeXHef2yosrPTAid.9rgMUUnD0MPUeMzG7v68GaR3/pI/KKy'),
 (8, 'sadqwe', 'alvarezdexterjohn01@gmail.com', '09992132139', 'dsahdu12dsad', '$2y$10$UAbja994U/p.EbdX76KXR.7fgsEOiBLPYEU.nMluSe0.gU0uwBvbm'),
-(9, 'john', 'qwerty@gmail.com', '09867452714', 'qweasd1234', '$2y$10$kac5IKAm12XCg/i9/7No.eenTJNvhvNFneCLjOwfw4WM2.WAAKSpC');
+(9, 'john', 'qwerty@gmail.com', '09867452714', 'qweasd1234', '$2y$10$kac5IKAm12XCg/i9/7No.eenTJNvhvNFneCLjOwfw4WM2.WAAKSpC'),
+(10, 'yan1', 'yan@gmail.com', '12345678909', 'qwe213ewq32', '$2y$10$.EWcP29.ODXY4fKIKolf1eeyw5OO4dfW3XLsNGBQZvEU0XmMOP6JK'),
+(11, 'rold', 'rold@mail.com', '09123874213', 'eh24h43', '$2y$10$Y6eVR18YaTOqLNa5bYAMTO6iBSwKmsZKrGlr9x3svjQsTombnUKqC');
 
 --
 -- Indexes for dumped tables
@@ -172,7 +175,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `productsss`
 --
 ALTER TABLE `productsss`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -184,7 +187,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
