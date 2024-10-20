@@ -10,13 +10,40 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
+$search_query = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
 $selected_color = isset($_GET['color']) ? $_GET['color'] : '';
+$selected_category = isset($_GET['category']) ? $conn->real_escape_string($_GET['category']) : '';
+$sort_option = isset($_GET['sort']) ? $_GET['sort'] : '';
 
+$sql = "SELECT * FROM productsss WHERE 1=1";
 
-$sql = "SELECT * FROM productsss";
+if ($search_query) {
+    $sql .= " AND name LIKE '%$search_query%'";
+}
+
 if ($selected_color) {
-    $sql .= " WHERE color = '" . $conn->real_escape_string($selected_color) . "'";
+    $sql .= " AND color = '" . $conn->real_escape_string($selected_color) . "'";
+}
+
+if ($selected_category) {
+    $sql .= " AND category = '" . $selected_category . "'";
+}
+
+switch ($sort_option) {
+    case 'name_asc':
+        $sql .= " ORDER BY name ASC";
+        break;
+    case 'name_desc':
+        $sql .= " ORDER BY name DESC";
+        break;
+    case 'price_asc':
+        $sql .= " ORDER BY price ASC";
+        break;
+    case 'price_desc':
+        $sql .= " ORDER BY price DESC";
+        break;
+    default:
+        break;
 }
 
 $result = $conn->query($sql);
@@ -28,139 +55,68 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            padding: 20px;
-            background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
-            color: #333; 
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em; 
-            color: #fff; 
-        }
-        .filter-container {
-            text-align: center;
-            margin-bottom: 20px;
-            background-color: rgba(255, 255, 255, 0.8); 
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        .filter-container select {
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #007bff; 
-            border-radius: 5px; 
-            background-color: #fff; 
-            appearance: none; 
-            cursor: pointer; 
-            margin: 0 10px; 
-            transition: border-color 0.3s; 
-        }
-        .filter-container select:hover {
-            border-color: #0056b3; 
-        }
-        .filter-container label {
-            font-weight: bold; 
-            margin-right: 10px; 
-        }
-        .product-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 50px; 
-            padding: 20px;
-            margin: 0 auto; 
-            max-width: 1200px; 
-            background: rgba(210, 180, 140, 0.8);
-            border-radius: 10px; 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-        }
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px; 
-            text-align: center;
-            background-color: #ddd; 
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-            transition: transform 0.2s, box-shadow 0.2s; 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .product-card:hover {
-            transform: translateY(-5px); 
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); 
-        }
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 10px; 
-        }
-        .product-card h3 {
-            font-size: 1.5em; 
-            margin: 10px 0;
-            color: #007bff; 
-        }
-        .product-card p {
-            margin: 5px 0;
-            color: #666;
-            font-size: 1.1em; 
-        }
-        .product-card .price {
-            font-size: 1.3em;
-            color: #e83e8c; 
-            font-weight: bold;
-        }
-        .icon-btn {
-            background-color: #007bff; 
-            border: none; 
-            color: white; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-size: 1.2em; 
-            padding: 10px;
-            margin: 5px 0; 
-            transition: background-color 0.3s, transform 0.2s; 
-        }
-        .icon-btn:hover {
-            background-color: #0056b3; 
-            transform: scale(1.05); 
-        }
-        .icon-btn.wishlist {
-            background-color: #dc3545; 
-        }
-        .icon-btn.wishlist:hover {
-            background-color: #c82333; 
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="productses.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="login.php" class="navbar-logo">
+                <img src="https://res.cloudinary.com/dw44z8kbk/image/upload/v1729222127/logo_a9uec9.png" alt="Logo">
+            </a>
 
-<h1>Kotsi</h1>
+            <ul class="navbar-links">
+                <li><a href="#">Homes</a></li>
+                <li><a href="product_page.php">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
 
+            <div class="navbar-icons">
+                <form class="search-bar" method="GET" action="">
+                    <input type="text" name="search" placeholder="Search products..." value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<div class="filter-container">
-    <form method="GET" action="">
-        <label for="color">Select Color:</label>
-        <select name="color" id="color" onchange="this.form.submit()">
-            <option value="">All Colors</option>
-            <option value="red" <?= $selected_color === 'red' ? 'selected' : ''; ?>>Red</option>
-            <option value="blue" <?= $selected_color === 'blue' ? 'selected' : ''; ?>>Blue</option>
-            <option value="green" <?= $selected_color === 'green' ? 'selected' : ''; ?>>Green</option>
-            <option value="yellow" <?= $selected_color === 'yellow' ? 'selected' : ''; ?>>Yellow</option>
-            <option value="black" <?= $selected_color === 'black' ? 'selected' : ''; ?>>Black</option>
-            <option value="white" <?= $selected_color === 'white' ? 'selected' : ''; ?>>White</option>
-        </select>
-    </form>
-</div>
+    <div class="filter-container">
+        <form method="GET" action="">
+            <label for="color">Select Color:</label>
+            <select name="color" id="color" onchange="this.form.submit()">
+                <option value="">All Colors</option>
+                <option value="red" <?= $selected_color === 'red' ? 'selected' : ''; ?>>Red</option>
+                <option value="blue" <?= $selected_color === 'blue' ? 'selected' : ''; ?>>Blue</option>
+                <option value="green" <?= $selected_color === 'green' ? 'selected' : ''; ?>>Green</option>
+                <option value="yellow" <?= $selected_color === 'yellow' ? 'selected' : ''; ?>>Yellow</option>
+                <option value="black" <?= $selected_color === 'black' ? 'selected' : ''; ?>>Black</option>
+                <option value="white" <?= $selected_color === 'white' ? 'selected' : ''; ?>>White</option>
+            </select>
 
-<div class="product-container">
+            <label for="category">Select Category:</label>
+            <select name="category" id="category" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                <option value="Race Car" <?= isset($_GET['category']) && $_GET['category'] === 'Race Car' ? 'selected' : ''; ?>>Race car</option>
+                <option value="Truck" <?= isset($_GET['category']) && $_GET['category'] === 'Truck' ? 'selected' : ''; ?>>Trucks</option>
+                <option value="Muscle Car" <?= isset($_GET['category']) && $_GET['category'] === 'Muscle Car' ? 'selected' : ''; ?>>Muscle Car</option>
+            </select>
+
+            <label for="sort">Sort By:</label>
+            <select name="sort" id="sort" onchange="this.form.submit()">
+                <option value="">Sort By</option>
+                <option value="name_asc" <?= isset($_GET['sort']) && $_GET['sort'] === 'name_asc' ? 'selected' : ''; ?>>Name (A-Z)</option>
+                <option value="name_desc" <?= isset($_GET['sort']) && $_GET['sort'] === 'name_desc' ? 'selected' : ''; ?>>Name (Z-A)</option>
+                <option value="price_asc" <?= isset($_GET['sort']) && $_GET['sort'] === 'price_asc' ? 'selected' : ''; ?>>Price (Low to High)</option>
+                <option value="price_desc" <?= isset($_GET['sort']) && $_GET['sort'] === 'price_desc' ? 'selected' : ''; ?>>Price (High to Low)</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="product-container">
     <?php
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -168,10 +124,16 @@ $result = $conn->query($sql);
             echo '<a href="product_details.php?id=' . $row["id"] . '">';
             echo '<img src="' . $row["image_url"] . '" alt="' . $row["name"] . '">';
             echo '</a>';
+            echo '<div class="product-details">';
+            echo '<div class="product-text">';
             echo '<h3><a href="product_details.php?id=' . $row["id"] . '">' . $row["name"] . '</a></h3>';
             echo '<p class="price">₱ ' . number_format($row["price"], 2) . '</p>';
             echo '<p>Stock: ' . $row["availability"] . '</p>';
-            echo '<button class="icon-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>';
+            echo '</div>';
+            echo '<div class="cart-icons">';
+            echo '<i class="fas fa-cart-plus"></i>';
+            echo '</div>';
+            echo '</div>';
             echo '</div>';
         }
     } else {
@@ -179,7 +141,6 @@ $result = $conn->query($sql);
     }
     ?>
 </div>
-
 </body>
 </html>
 
