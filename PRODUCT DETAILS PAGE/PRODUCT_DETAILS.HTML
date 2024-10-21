@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="productses.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img class="CAR1" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729148919/KOTSI_kqbhmw.png" alt="Cart">
+        </div>
+        <div class="nav-links">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#" class="active">PRODUCT</a>
+            <a href="#">PROFILE</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <img class="cart" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138623/iconcart_wfo1e6.png">
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="image-placeholder_main">image</div>
+        <div class="small-images">
+            <div class="image-placeholder1">image</div>
+            <div class="image-placeholder2">image</div>
+        </div>
+
+        <div class="product-details">
+            <p class="product-name">Name: <span id="product-name">Product Name</span></p>
+            <p class="info">Price: <span id="product-price">0.00</span></p>
+            <p class="info">Color: <span id="product-color">N/A</span></p>
+            <p class="info">Stock: <span id="product-stock">N/A</span></p>
+
+            <div class="stock-control">
+                <div class="quantity-control">
+                    <span class="minus">-</span>
+                    <span class="num">0</span>
+                    <span class="plus">+</span>
+                    <script>
+                        const minusBtn = document.querySelector('.minus');
+                        const plusBtn = document.querySelector('.plus');
+                        const numDisplay = document.querySelector('.num');
+            
+                        let count = parseInt(numDisplay.textContent);
+                
+                        minusBtn.addEventListener('click', () => {
+                            if (count > 1) {  
+                                count--;
+                                numDisplay.textContent = count;
+                            }
+                        });
+                        plusBtn.addEventListener('click', () => {
+                            count++;
+                            numDisplay.textContent = count;
+                        });
+                    </script>
+                </div>
+                <img class="cart2" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138623/iconcart_wfo1e6.png" alt="Cart">
+                <button class="buy-button">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

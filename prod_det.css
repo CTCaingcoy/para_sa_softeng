@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138317/bg_ognxjb.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+.logo {
+    font-size: 60px;
+    margin-left: 5%;
+}
+.navbar {
+    background-color: #3d2b1f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 35px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+.search-bar {
+    display: flex;
+    font-size: 14px;
+    border-radius: 100px;
+    margin-right: 5px;
+}
+.nav-links a.active{
+    text-decoration: underline;
+    text-decoration-thickness: 6px;
+    
+}
+
+.cart{
+    width: 40px;
+    margin-left: 20px;
+}
+.search-bar input {
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    width: 400px;
+
+}
+
+.product-container {
+    display: flex;
+    padding: 40px;
+    background-color: rgba(163, 143, 125, 0.7); 
+    border-radius: 40px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right:50px 
+}
+
+.product-image {
+    max-width: 800px;
+}
+
+.product-details {
+    margin-left: 100px;
+    font-size: 50px;
+    color: white;
+    padding-left: 50px;
+}
+
+.stock-control {
+    font-size: 30px;
+    color: black;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+.quantity-control span {
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cart2 {
+    width: 40px;
+    cursor: pointer;
+    fill: white;
+
+}
+
+.buy-button {
+    background-color: #ccb38d;
+    color: #3d2b1f;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.image-placeholder {
+    width: 1000px;
+    height: 700px;
+    background-color: rgba(128, 128, 128, 0.5); 
+    color: white; 
+    font-size: 50px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: 2px dashed #ccc; 
+    text-align: center;
+}

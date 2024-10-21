@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138317/bg_ognxjb.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2B1C04;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li {
+    position: relative;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navbar nav ul li.active a {
+    border-bottom: 3px solid white;
+}
+
+.search-cart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-cart input {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.search-cart{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+
+.search-cart .cart-icon {
+    font-size: 24px;
+}
+
+.order-confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: rgba(231, 203, 152, 0.5);  
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 50px;
+    border-radius: 50px;
+}
+
+.confirmation-box {
+    background-color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+.confirmation-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.confirmation-box p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.track-order-btn {
+    background-color: #c1a165;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.track-order-btn:hover {
+    background-color: #a6894f;
+}
+.search-cart .cart-icon img {
+    width: 30px;
+}
