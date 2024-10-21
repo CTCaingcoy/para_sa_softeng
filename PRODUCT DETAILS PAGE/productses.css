@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138317/bg_ognxjb.png'); /* Path to your image */
+    background-image: url('https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138317/bg_ognxjb.png'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;

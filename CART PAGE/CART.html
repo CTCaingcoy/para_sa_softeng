@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <link rel="stylesheet" href="cart.css">
-
 </head>
 <body>
 
-   
     <div class="navbar">
         <div class="logo">
             <img class="CAR1" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729148919/KOTSI_kqbhmw.png" alt="Cart">
@@ -29,16 +27,59 @@
     </div>
 
     <div class="cart-section">
-        YOUR CART ()
+        YOUR CART (2 ITEMS)
     </div>
-    <DIV class="CART-CONTAINER">
-        <LI>ITEM</LI>
-        <LI>PRICE</LI>
-        <LI>QUANTITY</LI>
-        <LI>TOTAL</LI>
-        <button class="checkout-button">Checkout</button>
-    </DIV>
 
+    <div class="cart-container">
+        <div class="cart-header">
+            <span>ITEM</span>
+            <span>PRICE</span>
+            <span>QUANTITY</span>
+            <span>TOTAL</span>
+        </div>
+
+        <!-- First Item -->
+        <div class="cart-item">
+            <div class="item-details">
+                <input type="checkbox">
+                <img src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729523139/Bone_Shaker_ixztbc.png" alt="Bone Shaker">
+                <span>BONE SHAKER</span>
+                <button class="remove-btn">🗑️</button>
+            </div>
+            <span class="price">₱ 1,500.00</span>
+            <div class="quantity-control">
+                <button>-</button>
+                <input type="text" value="1">
+                <button>+</button>
+            </div>
+            <span class="total">₱ 1,500.00</span>
+        </div>
+
+        <!-- Second Item -->
+        <div class="cart-item">
+            <div class="item-details">
+                <input type="checkbox">
+                <img src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729523154/Turbo_Charged_rrnfdi.png" alt="Turbo Charged">
+                <span>TURBO CHARGED</span>
+                <button class="remove-btn">🗑️</button>
+            </div>
+            <span class="price">₱ 1,500.00</span>
+            <div class="quantity-control">
+                <button>-</button>
+                <input type="text" value="1">
+                <button>+</button>
+            </div>
+            <span class="total">₱ 1,500.00</span>
+        </div>
+
+        <div class="checkout-section">
+            <button class="checkout-button">CHECK OUT</button>
+            <div class="total-price">
+                <span>Total: </span>
+                <span>₱ 3,000.00</span>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
