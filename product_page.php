@@ -11,9 +11,9 @@ if ($conn->connect_error) {
 }
 
 $search_query = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
-$selected_color = isset($_GET['color']) ? $_GET['color'] : '';
+$selected_color = isset($_GET['color']) ? $conn->real_escape_string($_GET['color']) : '';
 $selected_category = isset($_GET['category']) ? $conn->real_escape_string($_GET['category']) : '';
-$sort_option = isset($_GET['sort']) ? $_GET['sort'] : '';
+$sort_option = isset($_GET['sort']) ? $conn->real_escape_string($_GET['sort']) : '';
 
 $sql = "SELECT * FROM productsss WHERE 1=1";
 
@@ -26,7 +26,7 @@ if ($selected_color) {
 }
 
 if ($selected_category) {
-    $sql .= " AND category = '" . $selected_category . "'";
+    $sql .= " AND category = '" . $conn->real_escape_string($selected_category) . "'";
 }
 
 switch ($sort_option) {
@@ -56,33 +56,76 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="productses.css">
+    <link rel="stylesheet" href="productses.css"> 
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="login.php" class="navbar-logo">
-                <img src="https://res.cloudinary.com/dw44z8kbk/image/upload/v1729222127/logo_a9uec9.png" alt="Logo">
-            </a>
+<nav class="navbar">
+    <div class="container">
+        <a href="login.php" class="navbar-logo">
+            <img src="https://res.cloudinary.com/dw44z8kbk/image/upload/v1729222127/logo_a9uec9.png" alt="Logo">
+        </a>
 
-            <ul class="navbar-links">
-                <li><a href="#">Homes</a></li>
-                <li><a href="product_page.php">Products</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+        <div class="search-bar-container" id="mobileSearchBar">
+
+            <form method="GET" action="">
+                <input type="text" name="search" placeholder="Search products...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        
+            <!-- <div class="cart-icon" style="margin-left: 10px;">
+                <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+            </div> -->
+
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+            <!-- <span>Add to cart</span> -->
+        </div>
+
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- <li class="add-to-cart"><a href="#cart">Add to Cart</a></li> -->
+        </ul>
+
+        <!-- <div id="hamburgerMenu" style="display:none;">
+            <ul>
+                <li><a href="#cart"><i class="fas fa-shopping-cart"></i></a></li> 
             </ul>
+        </div> -->
 
-            <div class="navbar-icons">
-                <form class="search-bar" method="GET" action="">
-                    <input type="text" name="search" placeholder="Search products..." value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-                <a href="#" class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
+
+        <!-- <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <span>Add to Cart</span>
+        </div> -->
+
+        <!-- <div class="hamburger-menu" id="hamburgerMenu" style="display: none;">
+            <ul>
+                <li><a href="#cart">Add to Cart</a></li>
+            </ul>
+        </div> -->
+        <!-- <div class="add-to-cart-link">
+            <button>Add to Cart</button>
+        </div> -->
+
+        <!-- Search bar for desktop -->
+        <div class="navbar-icons">
+            <form class="search-bar" method="GET" action="">
+                <input type="text" name="search" placeholder="Search products...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
             </div>
         </div>
-    </nav>
+
+        
+        
+    </div>
+</nav>
 
     <div class="filter-container">
         <form method="GET" action="">
@@ -100,9 +143,9 @@ $result = $conn->query($sql);
             <label for="category">Select Category:</label>
             <select name="category" id="category" onchange="this.form.submit()">
                 <option value="">All Categories</option>
-                <option value="Race Car" <?= isset($_GET['category']) && $_GET['category'] === 'Race Car' ? 'selected' : ''; ?>>Race car</option>
-                <option value="Truck" <?= isset($_GET['category']) && $_GET['category'] === 'Truck' ? 'selected' : ''; ?>>Trucks</option>
-                <option value="Muscle Car" <?= isset($_GET['category']) && $_GET['category'] === 'Muscle Car' ? 'selected' : ''; ?>>Muscle Car</option>
+                <option value="Race Car" <?= $selected_category === 'Race Car' ? 'selected' : ''; ?>>Race Car</option>
+                <option value="Truck" <?= $selected_category === 'Truck' ? 'selected' : ''; ?>>Truck</option>
+                <option value="Muscle Car" <?= $selected_category === 'Muscle Car' ? 'selected' : ''; ?>>Muscle Car</option>
             </select>
 
             <label for="sort">Sort By:</label>
@@ -128,7 +171,7 @@ $result = $conn->query($sql);
             echo '<div class="product-text">';
             echo '<h3><a href="product_details.php?id=' . $row["id"] . '">' . $row["name"] . '</a></h3>';
             echo '<p class="price">₱ ' . number_format($row["price"], 2) . '</p>';
-            echo '<p>Stock: ' . $row["availability"] . '</p>';
+            echo '<p class="stock">Stock: ' . $row["availability"] . '</p>';
             echo '</div>';
             echo '<div class="cart-icons">';
             echo '<i class="fas fa-cart-plus"></i>';
@@ -140,9 +183,26 @@ $result = $conn->query($sql);
         echo "<p>No products available.</p>";
     }
     ?>
-</div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+        console.log("Hamburger menu clicked"); // Add this line
+        const navbarLinks = document.querySelector('.navbar-links');
+        const mobileSearchBar = document.getElementById('mobileSearchBar');
+        
+
+        navbarLinks.classList.toggle('active');
+
+        if (navbarLinks.classList.contains('active')) {
+            mobileSearchBar.style.display = 'none';
+        } else {
+            mobileSearchBar.style.display = 'block';
+        }
+    }
+    </script>
 </body>
-</html>
+</html> 
 
 <?php
 $conn->close();
