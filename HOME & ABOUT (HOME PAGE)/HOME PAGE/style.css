@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-image: url(bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2B1C04;
+}
+
+.logo-image {
+    width: 300px;
+    margin-bottom: 3%;
+    height: auto;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #B98F66;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #fff;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    text-align: center;
+}
+
+.auth-container h2 {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.auth-container h2 span {
+    margin-right: 10px;
+}
+
+.auth-container p {
+    font-size: 18px;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #fff; 
+}
+
+input::placeholder {
+    color: #fff; 
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #B98F66;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #B98F66;
+}
