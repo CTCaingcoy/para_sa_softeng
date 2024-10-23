@@ -10,7 +10,7 @@
 
     <div class="navbar">
         <div class="logo">
-            <img class="CAR1" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729148919/KOTSI_kqbhmw.png" alt="Cart">
+            <img class="CAR1" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729148919/KOTSI_kqbhmw.png" alt="Logo">
         </div>
         <div class="nav-links">
             <a href="#">HOME</a>
@@ -20,7 +20,7 @@
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Search">
-            <img class="cart" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138623/iconcart_wfo1e6.png">
+            <img class="cart" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138623/iconcart_wfo1e6.png" alt="Cart">
         </div>
     </div>
 
@@ -42,29 +42,31 @@
                     <span class="minus">-</span>
                     <span class="num">0</span>
                     <span class="plus">+</span>
-                    <script>
-                        const minusBtn = document.querySelector('.minus');
-                        const plusBtn = document.querySelector('.plus');
-                        const numDisplay = document.querySelector('.num');
-            
-                        let count = parseInt(numDisplay.textContent);
-                
-                        minusBtn.addEventListener('click', () => {
-                            if (count > 1) {  
-                                count--;
-                                numDisplay.textContent = count;
-                            }
-                        });
-                        plusBtn.addEventListener('click', () => {
-                            count++;
-                            numDisplay.textContent = count;
-                        });
-                    </script>
                 </div>
                 <img class="cart2" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729138623/iconcart_wfo1e6.png" alt="Cart">
                 <button class="buy-button">Buy Now</button>
             </div>
         </div>
     </div>
+
+    <script>
+        const minusBtn = document.querySelector('.minus');
+        const plusBtn = document.querySelector('.plus');
+        const numDisplay = document.querySelector('.num');
+
+        let count = parseInt(numDisplay.textContent);
+
+        minusBtn.addEventListener('click', () => {
+            if (count > 1) {  
+                count--;
+                numDisplay.textContent = count;
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            count++;
+            numDisplay.textContent = count;
+        });
+    </script>
 </body>
 </html>

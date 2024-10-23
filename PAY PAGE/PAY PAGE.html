@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
     <link rel="stylesheet" href="pay.css">
-    <title>PAYMENT PAGE</title>
 </head>
 <body>
-
     <div class="navbar">
         <div class="logo">
             <img class="CAR1" src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729148919/KOTSI_kqbhmw.png" alt="Cart">
@@ -25,12 +24,35 @@
             </div>
         </div>
     </div>
-  
-</div>
 
+    <div class="cart-items-container">
+        <div class="cart-item">
+            <img src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729523139/Bone_Shaker_ixztbc.png" alt="Product Image" class="product-image">
+            <div class="details">
+                <div class="location">Bulacan PH</div>
+                <div class="info">
+                    <div><span>COLOR</span><br>BLUE/ORANGE</div>
+                    <div><span>PRODUCT</span><br>BONE SHAKER</div>
+                    <div><span>QUANTITY</span><br>1</div>
+                    <div class="price">₱ 1,500.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <img src="https://res.cloudinary.com/dy5u1ccgi/image/upload/v1729523154/Turbo_Charged_rrnfdi.png" alt="Product Image" class="product-image">
+            <div class="details">
+                <div class="location">Bulacan PH</div>
+                <div class="info">
+                    <div><span>COLOR</span><br>BLUE/ORANGE</div>
+                    <div><span>PRODUCT</span><br>TURBO CHARGED</div>
+                    <div><span>QUANTITY</span><br>1</div>
+                    <div class="price">₱ 1,500.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="payment-container">
-        <hr class="custom-line">
         <div class="payment-header">
             <div>Deliver to:</div>
             <div>Pay With:</div>
@@ -38,9 +60,7 @@
         </div>
 
         <div class="payment-detail">
-            <div class="shipping-address">SHIPPING ADDRESS 
-            </div>
-
+            <div class="shipping-address">SHIPPING ADDRESS</div>
             <div class="payment-methods">
                 <input type="radio" id="cod" name="payment" value="cod">
                 <label for="cod">COD</label>
@@ -48,13 +68,11 @@
                 <input type="radio" id="gcash" name="payment" value="gcash">
                 <label for="gcash">G-CASH</label>
             </div>
-            
-
-            <div class="subtotal">₱ 0000.00</div>
+            <div class="subtotal">₱ 3,000.00</div>
         </div>
 
         <div class="buttons">
-
+            
             <button class="pay">Pay</button>
         </div>
     </div>
